@@ -8,7 +8,7 @@ class Place {
   final String countryCode;
   final int admin1Id;
   final int admin2Id;
-  final int admin3Id;
+  final int? admin3Id;
   final String timezone;
   final int? population;
   final List<String>? postcodes;
@@ -16,7 +16,7 @@ class Place {
   final String country;
   final String admin1;
   final String admin2;
-  final String admin3;
+  final String? admin3;
 
   Place({
     required this.id,

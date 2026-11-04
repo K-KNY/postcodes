@@ -43,7 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
     final url = Uri.parse(
       //'https://geocoding-api.open-meteo.com{Uri.encodeComponent(cleanedQuery)}&language=ca&countryCode=ES',
-      'https://geocoding-api.open-meteo.com/v1/search?name=$cleanedQuery&language=ca&countryCode=ES',
+      'https://geocoding-api.open-meteo.com/v1/search?name=$cleanedQuery&language=ca&countrycode=ES',
     );
     debugPrint("===> $cleanedQuery <===");
     debugPrint("====> LA URL ENVIADA ES: $url <====");
@@ -63,9 +63,11 @@ class _SearchScreenState extends State<SearchScreen> {
         hasError = true;
         debugPrint("===> No es código 200");
       }
-    } catch (e) {
+    } catch (e, stackTrace) {
+      // Con StackTrace capturamos los errores. Lo mostramos en el debugPrint("Stack Trace: $stackTrace") de abajo
       if (!mounted) return;
       debugPrint("Error detectado: $e");
+      debugPrint("Stack Trace: $stackTrace");
       hasError = true; // Error real de infraestructura (ej: Modo Avión)
     }
 
