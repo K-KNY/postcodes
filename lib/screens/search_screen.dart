@@ -166,7 +166,9 @@ class _SearchScreenState extends State<SearchScreen> {
                 : ListView.builder(
                     itemCount: apiPlaces.length,
                     itemBuilder: (context, index) {
-                      return PlaceCard(place: apiPlaces[index]);
+                      debugPrint("===> Mostrant el CP de ${apiPlaces[index].name}: ${apiPlaces[index].postcodes} <===",
+                      );
+                    return PlaceCard(place: apiPlaces[index]);
                     },
                   ),
           ),

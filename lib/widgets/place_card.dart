@@ -25,8 +25,14 @@ class PlaceCard extends StatelessWidget {
             AppStyles.smallSeparator,
             Text("Província: ${place.admin2}", style: AppStyles.bodyText),
             Text("Comunitat: ${place.admin1}", style: AppStyles.bodyText),
-            Text("C.P.: $postcodesStr", style: AppStyles.infoText),
-            Text("Habitants: ${place.population}", style: AppStyles.infoText),
+            Text(
+              "C.P.: ${place.postcodes!.isEmpty ? 'No disponible' : postcodesStr}",
+              style: AppStyles.infoText,
+            ),
+            Text(
+              "Habitants: ${place.population ?? 'No disponible'}",
+              style: AppStyles.infoText,
+            ),
           ],
         ),
       ),
